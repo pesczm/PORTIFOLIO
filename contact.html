@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Chisola Nyala</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+    :root {
+      --gold: #d4af37;
+      --gold-soft: #e8d5a1;
+      --black: #000000;
+      --white: #ffffff;
+      --text-dark: #111;
+      --text-muted: #444;
+      --card-bg: rgba(255,255,255,0.95);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-dark);
+      background: url('images/bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+
+    /* Dark overlay for readability */
+    body::before {
+      content: '';
+      position: fixed;
+      top:0; left:0; right:0; bottom:0;
+      background: rgba(0,0,0,0.4);
+      z-index: -1;
+    }
+
+    .container { width: 90%; max-width: 900px; margin: 60px auto; }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: var(--black);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    p.subtitle {
+      text-align: center;
+      font-size: 1rem;
+      color: var(--white);
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 30px;
+      border-radius: 14px;
+      border: 1px solid #eaeaea;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    .contact-item { margin-bottom: 25px; }
+
+    .contact-item h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      border-left: 5px solid var(--gold);
+      padding-left: 12px;
+      margin-bottom: 10px;
+    }
+
+    .contact-item a {
+      color: var(--gold);
+      font-weight: 600;
+      word-break: break-all;
+      text-decoration: none;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 26px;
+      border-radius: 30px;
+      border: none;
+      background: var(--gold);
+      color: var(--black);
+      font-weight: 600;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+    .back-btn:hover { background: #b8902c; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Contact Me</h1>
+    <p class="subtitle">Reach out by phone, email, or LinkedIn.</p>
+
+    <div class="card">
+
+      <!-- Phone -->
+      <div class="contact-item">
+        <h3>Phone</h3>
+        <a id="phone-call">+260977441348</a>
+      </div>
+
+      <!-- Email -->
+      <div class="contact-item">
+        <h3>Email</h3>
+        <a href="mailto:chisolaofficialnyala@gmail.com">chisolaofficialnyala@gmail.com</a>
+      </div>
+
+      <!-- LinkedIn -->
+      <div class="contact-item">
+        <h3>LinkedIn</h3>
+        <a href="https://www.linkedin.com/in/chisola-nyala-309042158/" target="_blank">View Profile</a>
+      </div>
+
+      <a href="chisola.html" class="back-btn">← Back to Home</a>
+    </div>
+  </div>
+
+  <script>
+  (function() {
+    const phone = "+260977441348";
+    const callLink = document.getElementById("phone-call");
+    if (!callLink) return;
+
+    const isMobileDevice = /Android|iPhone|iPad|iPod|Windows Phone|webOS/i.test(navigator.userAgent);
+
+    if (isMobileDevice) {
+      callLink.href = "tel:" + phone;
+      callLink.textContent = "Tap to call: " + phone;
+    } else {
+      callLink.href = "#";
+      callLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        alert("Call: " + phone);
+      });
+      callLink.textContent = "+260977441348";
+    }
+  })();
+  </script>
+
+</body>
+</html>
