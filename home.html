@@ -446,6 +446,49 @@
         height: 320px;
       }
     }
+    .menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--black);
+}
+
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 75px;
+    right: 20px;
+    flex-direction: column;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 230px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+    border: 1px solid var(--border);
+    z-index: 999;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 10px 0;
+    width: 100%;
+  }
+
+  .topbar-inner {
+    justify-content: space-between;
+  }
+      }
   </style>
 </head>
 <body>
@@ -453,15 +496,18 @@
   <header class="topbar">
     <div class="container topbar-inner">
       <a class="brand" href="home.html">Chisola Nyala</a>
+<button class="menu-toggle" onclick="toggleMenu()">
+  ☰
+</button>
 
-      <nav class="nav-links" aria-label="Primary">
-        <a href="home.html">Home</a>
-        <a href="education.html">Education</a>
-        <a href="projects.html">Projects</a>
-        <a href="blog.html">Blog</a>
-        <a href="learning.html">Learning Hub</a>
-        <a href="contact.html" class="nav-cta">Book a Consultation</a>
-      </nav>
+<nav class="nav-links" id="mobileMenu" aria-label="Primary">
+  <a href="home.html">Home</a>
+  <a href="education.html">Education</a>
+  <a href="projects.html">Projects</a>
+  <a href="blog.html">Blog</a>
+  <a href="learning.html">Learning Hub</a>
+  <a href="contact.html" class="nav-cta">Book a Consultation</a>
+</nav>
     </div>
   </header>
 
@@ -623,6 +669,11 @@
       © 2026 Chisola Nyala • Portfolio
     </div>
   </footer>
-
+<script>
+function toggleMenu() {
+  document.getElementById("mobileMenu")
+          .classList.toggle("show");
+}
+</script>
 </body>
 </html>
