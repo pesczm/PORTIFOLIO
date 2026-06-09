@@ -1,137 +1,725 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nzali Phiri</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chisola Nyala — Home</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --gold: #d4af37;
+      --gold-soft: #ead9a0;
+      --black: #0b0b0b;
+      --white: #ffffff;
+      --text-dark: #111111;
+      --text-muted: #666666;
+      --border: #e9e9e9;
+      --card: #ffffff;
+      --bg-soft: #fafafa;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-dark);
+      background: var(--white);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    /* NAV */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 0;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+      color: var(--black);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      font-weight: 600;
+      transition: 0.2s ease;
+      font-size: 0.96rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-cta {
+      padding: 11px 18px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: var(--black);
+      font-weight: 700;
+      border: 1px solid var(--gold);
+      transition: 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      background: #be972f;
+    }
+
+    /* HERO */
+    .hero {
+      background:
+        linear-gradient(135deg, rgba(11,11,11,0.92), rgba(11,11,11,0.78)),
+        url('images/bg.jpg') center/cover no-repeat;
+      color: var(--white);
+      padding: 70px 0 60px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 42px;
+      align-items: center;
+      min-height: 78vh;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(234, 217, 160, 0.22);
+      background: rgba(255,255,255,0.05);
+      color: var(--gold-soft);
+      font-size: 0.9rem;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.9rem, 6vw, 5rem);
+      line-height: 1.03;
+      margin-bottom: 16px;
+      letter-spacing: 0.4px;
+    }
+
+    .hero p {
+      color: rgba(255,255,255,0.92);
+      font-size: 1.05rem;
+      max-width: 620px;
+      margin-bottom: 24px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 26px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.25s ease;
+      border: 1px solid transparent;
+      min-width: 190px;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: #be972f;
+    }
+
+    .btn-secondary {
+      border-color: rgba(255,255,255,0.24);
+      color: var(--white);
+      background: transparent;
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      border-color: var(--gold);
+      color: var(--gold-soft);
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .tag {
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #f5f5f5;
+      font-size: 0.93rem;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.96);
+      color: var(--text-dark);
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.24);
+      border: 1px solid rgba(255,255,255,0.22);
+    }
+
+    .hero-card img {
+      width: 100%;
+      height: 470px;
+      object-fit: cover;
+      border-radius: 18px;
+      margin-bottom: 18px;
+      border: 1px solid var(--border);
+    }
+
+    .hero-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.55rem;
+      margin-bottom: 8px;
+      color: var(--black);
+    }
+
+    .hero-card p {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+    }
+
+    /* SECTIONS */
+    main {
+      padding: 58px 0 10px;
+      background: #fff;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 32px;
+      margin-bottom: 26px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    .card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      margin-bottom: 18px;
+      padding-left: 12px;
+      border-left: 5px solid var(--gold);
+      color: var(--black);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .about-text p {
+      margin-bottom: 14px;
+      color: var(--text-dark);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+    }
+
+    .section-label {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #f8f4e4;
+      color: #8d6a00;
+      font-size: 0.86rem;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    .stats,
+    .service-grid,
+    .project-grid,
+    .content-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .stats {
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .stat,
+    .service,
+    .project,
+    .content-card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--bg-soft);
+      padding: 22px;
+      transition: 0.25s ease;
+    }
+
+    .stat:hover,
+    .service:hover,
+    .project:hover,
+    .content-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(212,175,55,0.65);
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+
+    .service-grid {
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    }
+
+    .service h3,
+    .project h3,
+    .content-card h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--black);
+      margin-bottom: 8px;
+      font-size: 1.25rem;
+    }
+
+    .project-grid {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .project img,
+    .content-card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 14px;
+      border: 1px solid var(--border);
+    }
+
+    .meta {
+      color: var(--gold);
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .link {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .link:hover {
+      text-decoration: underline;
+    }
+
+    .content-grid {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .cta {
+      background:
+        linear-gradient(135deg, rgba(0,0,0,0.96), rgba(24,24,24,0.95));
+      color: var(--white);
+      border-radius: 22px;
+      padding: 34px;
+      border: 1px solid rgba(212,175,55,0.18);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.18);
+    }
+
+    .cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #fff;
+      border-left: 5px solid var(--gold);
+      padding-left: 12px;
+    }
+
+    .cta p {
+      max-width: 760px;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 22px;
+    }
+
+    .footer {
+      background: var(--black);
+      color: var(--gold);
+      text-align: center;
+      padding: 24px 16px;
+      margin-top: 36px;
+      font-size: 0.95rem;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(212,175,55,0.7), transparent);
+      margin: 14px 0 0;
+    }
+
+    @media (max-width: 960px) {
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 40px;
+      }
+
+      .hero-card img {
+        height: 380px;
+      }
+
+      .about-image img {
+        height: 360px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .topbar-inner {
+        justify-content: center;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .card,
+      .cta {
+        padding: 24px 18px;
+      }
+
+      .hero-card img {
+        height: 320px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<header class="site">
-  <div class="container nav">
-    <a class="brand" href="home.html">
-      <strong>NZALI PHIRI</strong>
-      <span>Nutrition • Digital Services</span>
-    </a>
-    <button class="menu-btn" onclick="toggleMenu()">Menu</button>
-    <nav class="nav-links">
-      <a href="home.html">Home</a>
-      <a href="health.html">Health Services</a>
-      <a href="digital.html">Digital Services</a>
-      <a href="contact.html">Contact</a>
-      <a href="index.html">Intro</a>
-    </nav>
-  </div>
-</header>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="home.html">Chisola Nyala</a>
 
-<main>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="home.html">Home</a>
+        <a href="education.html">Education</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="learning.html">Learning Hub</a>
+        <a href="contact.html" class="nav-cta">Book a Consultation</a>
+      </nav>
+    </div>
+  </header>
+
   <section class="hero">
-    <div class="container hero-wrap">
-      <div class="hero-copy">
-        <div class="kicker">Human Nutritionist • Digital Solutions Professional</div>
-        <h1 class="h1">Nzali Phiri</h1>
-        <p style="margin-top:18px; max-width:64ch;">I help people improve their health through thoughtful nutrition support and help businesses grow through digital services, design, and organized project support.</p>
-        <div class="btns">
-          <a class="btn primary" href="contact.html">Book Consultation</a>
-          <a class="btn ghost" href="health.html">Health Services</a>
-          <a class="btn ghost" href="digital.html">Digital Services</a>
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Electrical Engineer • Renewable Energy Specialist</span>
+        <h1>Chisola Nyala</h1>
+        <p>
+          I build practical engineering solutions with a focus on renewable energy, technical excellence, and
+          sustainable impact. This portfolio brings together my professional work, academic background, blog writing,
+          and educational content.
+        </p>
+
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary">Book a Consultation</a>
+          <a href="#main-content" class="btn btn-secondary">View the Website</a>
         </div>
-        <div class="split-note">
-          <div class="mini"><strong>Nutrition first.</strong><div class="muted">Consultation, assessment, and diet plans.</div></div>
-          <div class="mini"><strong>Digital support.</strong><div class="muted">Creative services for brands and businesses.</div></div>
+
+        <div class="hero-tags">
+          <span class="tag">Solar PV Design</span>
+          <span class="tag">Project Management</span>
+          <span class="tag">Technical Consulting</span>
+          <span class="tag">Research & Learning</span>
         </div>
       </div>
 
-      <div class="hero-photo image-frame">
-        <img src="images/hero-photo.jpg" alt="Nzali Phiri portrait">
-        <div class="label">Upload: images/hero-photo.jpg</div>
+      <div class="hero-card">
+        <img src="images/Untitled design.png" alt="Chisola Nyala">
+        <h3>Professional Portfolio</h3>
+        <p>
+          A clean engineering-focused website designed to showcase experience, education, projects, articles, and
+          educational resources from my YouTube channel.
+        </p>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <main id="main-content">
     <div class="container">
-      <div class="kicker">Trusted By</div>
-      <h2 class="h2">Companies I've Worked With</h2>
-      <p class="muted">Logo placeholders only — replace with official logo files when ready.</p>
-      <div class="logo-strip" style="margin-top:22px;">
-        <div class="logo-box">
-          <div class="image-frame" style="min-height:92px; width:100%;">
-            <img src="images/photon-logo.png" alt="Photon Engineering Services and Consultancy logo">
+
+      <section class="card">
+        <h2>About Me</h2>
+        <div class="about-grid">
+          <div class="about-text">
+            <span class="section-label">Who I Am</span>
+            <p>
+              I am an Electrical Engineer and Renewable Energy Specialist with a strong passion for sustainable energy
+              systems, technical innovation, and community-centered engineering solutions.
+            </p>
+            <p>
+              My work focuses on renewable energy technologies, project management, energy access, and developing
+              practical solutions that support long-term sustainable growth.
+            </p>
+            <p>
+              This website also includes a blog and a learning space for educational content from my YouTube channel,
+              helping share knowledge and create value beyond project work.
+            </p>
           </div>
-          <small>images/photon-logo.png</small>
-        </div>
-        <div class="logo-box">
-          <div class="image-frame" style="min-height:92px; width:100%;">
-            <img src="images/pindrop-logo.png" alt="Pindrop Express Cleaning logo">
+
+          <div class="about-image">
+            <img src="images/Untitled design.png" alt="Chisola Nyala portrait">
           </div>
-          <small>images/pindrop-logo.png</small>
         </div>
-        <div class="logo-box">
-          <div class="image-frame" style="min-height:92px; width:100%;">
-            <img src="images/kbs-logo.png" alt="KBS Loans and Finance logo">
+      </section>
+
+      <section class="card">
+        <h2>Highlights</h2>
+        <div class="stats">
+          <div class="stat">
+            <h3>MSc</h3>
+            <p>Sustainable Engineering</p>
           </div>
-          <small>images/kbs-logo.png</small>
+          <div class="stat">
+            <h3>BTech</h3>
+            <p>Electrical Engineering</p>
+          </div>
+          <div class="stat">
+            <h3>Research</h3>
+            <p>Published Author</p>
+          </div>
+          <div class="stat">
+            <h3>Renewables</h3>
+            <p>Industry Focus</p>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <section class="section" style="background:rgba(255,255,255,.015); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+      <section class="card">
+        <h2>Core Services</h2>
+        <div class="service-grid">
+          <div class="service">
+            <h3>Solar PV Design</h3>
+            <p>Design and optimization of solar energy systems for residential, commercial, and rural applications.</p>
+          </div>
+          <div class="service">
+            <h3>Energy Audits</h3>
+            <p>Technical assessments and recommendations to improve efficiency and reduce energy waste.</p>
+          </div>
+          <div class="service">
+            <h3>Project Management</h3>
+            <p>Planning, coordination, and supervision of engineering and renewable energy projects.</p>
+          </div>
+          <div class="service">
+            <h3>Technical Consulting</h3>
+            <p>Renewable energy guidance, feasibility input, and engineering support for sustainable solutions.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Education & Research</h2>
+        <div class="service-grid">
+          <div class="service">
+            <h3>Master of Science in Sustainable Engineering</h3>
+            <p>University of Strathclyde, Scotland</p>
+            <p class="meta">Specialisation: Renewable Energy Systems</p>
+            <a class="link" href="education.html">View Education</a>
+          </div>
+          <div class="service">
+            <h3>Bachelor of Technology in Electrical Engineering</h3>
+            <p>National Institute of Technology, Rourkela</p>
+            <p class="meta">Power systems, power electronics, machines, and communication systems</p>
+            <a class="link" href="education.html">View Education</a>
+          </div>
+          <div class="service">
+            <h3>Research Thesis</h3>
+            <p>Hybrid renewable power systems, solar PV design, and machine learning applications in energy.</p>
+            <p class="meta">Academic and applied research</p>
+            <a class="link" href="education.html">Read More</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Featured Projects</h2>
+        <div class="project-grid">
+          <div class="project">
+            <img src="images/solar-panels-residential-house.jpg" alt="Residential solar project">
+            <h3>Residential Housing</h3>
+            <p>Solar PV installation for homes with a focus on energy efficiency, safety compliance, and reliable performance.</p>
+            <a class="link" href="projects.html">View Projects</a>
+          </div>
+          <div class="project">
+            <img src="images/solar-power-power-station.jpg" alt="Commercial solar project">
+            <h3>Commercial & Business Systems</h3>
+            <p>Design and installation of commercial solar systems, including monitoring, energy storage, and optimization.</p>
+            <a class="link" href="projects.html">View Projects</a>
+          </div>
+          <div class="project">
+            <img src="images/beautiful-alternative-energy-plant-with-solar-panels.jpg" alt="Large-scale solar project">
+            <h3>Large Scale Projects</h3>
+            <p>Management and installation of large solar systems, including site supervision and energy system design.</p>
+            <a class="link" href="projects.html">View Projects</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Latest Blog Articles</h2>
+        <div class="content-grid">
+          <div class="content-card">
+            <h3>Healthy Eating Without Overspending</h3>
+            <p class="meta">Blog Preview</p>
+            <p>A practical article on budgeting, food planning, and making healthier choices without strain.</p>
+            <a class="link" href="blog.html">Read Blog</a>
+          </div>
+          <div class="content-card">
+            <h3>Renewable Energy in Everyday Life</h3>
+            <p class="meta">Engineering Insights</p>
+            <p>Simple reflections on how renewable technologies are shaping homes, businesses, and communities.</p>
+            <a class="link" href="blog.html">Read Blog</a>
+          </div>
+          <div class="content-card">
+            <h3>Career Lessons from Engineering</h3>
+            <p class="meta">Professional Growth</p>
+            <p>Thoughts on growth, technical learning, leadership, and the value of continuous improvement.</p>
+            <a class="link" href="blog.html">Read Blog</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Learning Hub</h2>
+        <div class="content-grid">
+          <div class="content-card">
+            <img src="images/image.png" alt="Learning hub preview">
+            <h3>Solar Energy Basics</h3>
+            <p>Educational content from my YouTube channel explaining the fundamentals of solar power systems.</p>
+            <a class="link" href="learning.html">Watch & Learn</a>
+          </div>
+          <div class="content-card">
+            <img src="images/image.png" alt="Learning hub preview">
+            <h3>Electrical Engineering Topics</h3>
+            <p>Simple and useful technical lessons designed to help learners and young professionals.</p>
+            <a class="link" href="learning.html">Watch & Learn</a>
+          </div>
+          <div class="content-card">
+            <img src="images/image.png" alt="Learning hub preview">
+            <h3>Renewable Energy Career Content</h3>
+            <p>Insights into engineering careers, renewable energy growth, and practical professional development.</p>
+            <a class="link" href="learning.html">Watch & Learn</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <h2>Book a Consultation</h2>
+        <p>
+          Need support with a renewable energy project, solar design, or technical engineering guidance? Get in touch
+          to discuss your idea, project, or consulting needs.
+        </p>
+        <div class="hero-actions" style="margin-bottom:0;">
+          <a href="contact.html" class="btn btn-primary">Book a Consultation</a>
+          <a href="projects.html" class="btn btn-secondary">Explore Projects</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
     <div class="container">
-      <div class="kicker">Health Services</div>
-      <h2 class="h2">What I Offer</h2>
-      <div class="grid four" style="margin-top:22px;">
-        <div class="card service-card"><div class="icon">🥗</div><h3>Nutrition Consultation</h3><p class="muted">One-on-one personalized support.</p></div>
-        <div class="card service-card"><div class="icon">📋</div><h3>Nutrition Assessment</h3><p class="muted">Review of dietary habits and lifestyle.</p></div>
-        <div class="card service-card"><div class="icon">🍽️</div><h3>Diet Plans</h3><p class="muted">Customized plans to support your goals.</p></div>
-        <div class="card service-card"><div class="icon">🎤</div><h3>Public Speaking</h3><p class="muted">Health talks and wellness presentations.</p></div>
-      </div>
-      <div class="btns"><a class="btn primary" href="health.html">Go to Health Services</a></div>
+      © 2026 Chisola Nyala • Portfolio
     </div>
-  </section>
+  </footer>
 
-  <section class="section">
-    <div class="container">
-      <div class="kicker">Digital Services</div>
-      <h2 class="h2">Business Support Services</h2>
-      <div class="grid three" style="margin-top:22px;">
-        <div class="card service-card"><div class="icon">🗂️</div><h3>Virtual Assistance</h3><p class="muted">Admin support, follow-up, and task handling.</p></div>
-        <div class="card service-card"><div class="icon">🧭</div><h3>Project Coordination</h3><p class="muted">Organized support for projects and deadlines.</p></div>
-        <div class="card service-card"><div class="icon">✉️</div><h3>Email & Calendar</h3><p class="muted">Scheduling and inbox management.</p></div>
-        <div class="card service-card"><div class="icon">✍️</div><h3>Content Writing</h3><p class="muted">Website copy, posts, and marketing text.</p></div>
-        <div class="card service-card"><div class="icon">🎨</div><h3>Graphic Design</h3><p class="muted">Flyers, posters, social media graphics.</p></div>
-        <div class="card service-card"><div class="icon">🌐</div><h3>Website Design</h3><p class="muted">Responsive websites for personal brands and businesses.</p></div>
-      </div>
-      <div class="btns"><a class="btn primary" href="digital.html">Go to Digital Services</a></div>
-    </div>
-  </section>
-
-  <section class="section" style="background:rgba(255,255,255,.015);">
-    <div class="container">
-      <div class="kicker">Customer Reviews</div>
-      <h2 class="h2">What Clients Say</h2>
-      <div class="grid three" style="margin-top:22px;">
-        <div class="card review"><div class="stars">★★★★★</div><p>Professional, responsive, and easy to work with.</p><div class="muted">Digital services client</div></div>
-        <div class="card review"><div class="stars">★★★★★</div><p>Clear nutrition guidance that was practical and supportive.</p><div class="muted">Nutrition client</div></div>
-        <div class="card review"><div class="stars">★★★★★</div><p>Excellent communication and quality work delivered on time.</p><div class="muted">Branding client</div></div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer class="footer">
-  <div class="container footer-grid">
-    <div><div class="kicker">Contact</div><h3 class="h3">Let's work together</h3><p class="muted">Email: <a href="mailto:inquiry@nzaliphiri.com">inquiry@nzaliphiri.com</a><br>WhatsApp: <a href="https://wa.me/260762634187">+260 762 634 187</a></p></div>
-    <div><div class="kicker">Pages</div><p><a href="health.html">Health Services</a><br><a href="digital.html">Digital Services</a><br><a href="contact.html">Contact</a><br><a href="index.html">Intro</a></p></div>
-    <div><div class="kicker">Brand</div><p class="muted">Nzali Phiri<br>Human Nutritionist<br>Digital Solutions Professional</p></div>
-  </div>
-</footer>
-
-<script src="script.js"></script>
 </body>
 </html>
