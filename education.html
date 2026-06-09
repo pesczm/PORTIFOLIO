@@ -80,43 +80,75 @@
       color: var(--black);
     }
 
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
+    .menu-container {
+      position: relative;
+    }
+
+    .menu-btn {
+      display: inline-flex;
       align-items: center;
-      gap: 18px;
-    }
-
-    .nav-links a {
-      color: var(--text-muted);
-      font-weight: 600;
-      transition: 0.2s ease;
-      font-size: 0.96rem;
-    }
-
-    .nav-links a:hover {
-      color: var(--gold);
-    }
-
-    .nav-cta {
-      padding: 11px 18px;
-      border-radius: 999px;
+      gap: 8px;
       background: var(--gold);
       color: var(--black);
-      font-weight: 700;
       border: 1px solid var(--gold);
+      padding: 12px 18px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 700;
       transition: 0.25s ease;
-      white-space: nowrap;
+      font-family: inherit;
     }
 
-    .nav-cta:hover {
+    .menu-btn:hover {
       transform: translateY(-2px);
       background: #be972f;
     }
 
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 54px;
+      min-width: 240px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+      z-index: 1001;
+    }
+
+    .dropdown-menu.show {
+      display: block;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 14px 18px;
+      color: var(--text-dark);
+      font-weight: 600;
+      transition: 0.2s ease;
+      background: #fff;
+    }
+
+    .dropdown-menu a:hover {
+      background: #f8f8f8;
+      color: var(--gold);
+    }
+
+    .dropdown-menu .cta-link {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    .dropdown-menu .cta-link:hover {
+      background: #be972f;
+      color: var(--black);
+    }
+
     /* HERO */
     .hero {
-      padding: 70px 0 30px;
+      padding: 72px 0 34px;
       background:
         linear-gradient(135deg, rgba(11,11,11,0.94), rgba(11,11,11,0.82)),
         url('images/bg.jpg') center/cover no-repeat;
@@ -270,9 +302,15 @@
       margin-top: 26px;
     }
 
+    .logo-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     .logo-box {
-      width: 170px;
-      min-height: 130px;
+      width: 180px;
+      min-height: 140px;
       background: #fff;
       border: 1px solid var(--border);
       border-radius: 16px;
@@ -284,7 +322,7 @@
     }
 
     .logo-box img {
-      max-height: 90px;
+      max-height: 92px;
       width: auto;
       object-fit: contain;
     }
@@ -294,12 +332,7 @@
       margin-top: 10px;
       font-size: 0.9rem;
       color: var(--text-muted);
-    }
-
-    .logo-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      max-width: 180px;
     }
 
     .quick-links {
@@ -373,10 +406,6 @@
         justify-content: center;
       }
 
-      .nav-links {
-        justify-content: center;
-      }
-
       .card {
         padding: 26px 20px;
       }
@@ -395,6 +424,12 @@
       .back-btn {
         width: 100%;
       }
+
+      .dropdown-menu {
+        right: 0;
+        left: auto;
+        min-width: 220px;
+      }
     }
   </style>
 </head>
@@ -404,14 +439,20 @@
     <div class="container topbar-inner">
       <a class="brand" href="home.html">Chisola Nyala</a>
 
-      <nav class="nav-links" aria-label="Primary">
-        <a href="home.html">Home</a>
-        <a href="education.html">Education</a>
-        <a href="projects.html">Projects</a>
-        <a href="blog.html">Blog</a>
-        <a href="learning.html">Learning Hub</a>
-        <a href="contact.html" class="nav-cta">Book a Consultation</a>
-      </nav>
+      <div class="menu-container">
+        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="dropdownMenu">
+          ☰ Menu
+        </button>
+
+        <div class="dropdown-menu" id="dropdownMenu">
+          <a href="home.html">Home</a>
+          <a href="education.html">Education</a>
+          <a href="projects.html">Projects</a>
+          <a href="blog.html">Blog</a>
+          <a href="learning.html">Learning Hub</a>
+          <a href="contact.html" class="cta-link">Book a Consultation</a>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -541,8 +582,34 @@
   </main>
 
   <footer class="footer">
-    © 2026 Chisola Nyala · Portfolio
+    © 2026 Chisola Nyala • Portfolio
   </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    function closeMenu() {
+      dropdownMenu.classList.remove('show');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = dropdownMenu.classList.toggle('show');
+      menuBtn.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.menu-container')) {
+        closeMenu();
+      }
+    });
+
+    dropdownMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+  </script>
 
 </body>
 </html>
