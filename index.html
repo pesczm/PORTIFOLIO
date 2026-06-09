@@ -1,213 +1,479 @@
-bodyYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chisola Nyala — Portfolio</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    :root {
-      --gold: #d4af37;
-      --gold-soft: #e8d5a1;
-      --black: #000000;
-      --white: #ffffff;
-      --text-dark: #111;
-      --text-muted: #444;
-      --bg: var(--white);
-      --card-bg: var(--white);
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--text-dark); line-height: 1.6; }
-    a { text-decoration: none; color: inherit; }
+<title>Chisola Nyala | Electrical Engineer</title>
 
-    .container { width: 90%; max-width: 900px; margin: auto; }
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    /* HERO / INTRO */
-    .hero { background: var(--black) url('https://via.placeholder.com/1200x600') center/cover no-repeat; color: var(--white); text-align: center; padding: 50px 20px 80px; position: relative; }
-    .hero::after { content: \"\"; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); z-index: 0; }
-    .hero .hero-content { position: relative; z-index: 1; }
-    .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 15px; letter-spacing: 1px; }
-    .hero p { font-size: 1.2rem; color: var(--gold-soft); margin-bottom: 20px; }
-    .hero .btn { padding: 14px 28px; border-radius: 30px; background: var(--gold); color: var(--black); font-weight: 600; transition: background 0.3s ease; }
-    .hero .btn:hover { background: #b8902c; }
+<style>
 
-    /* NAVBAR */
-    nav { background: var(--white); padding: 15px 0; border-bottom: 1px solid #ddd; }
-    nav .container { display: flex; justify-content: center; gap: 20px; }
-    nav a { font-weight: 500; color: var(--text-muted); }
-    nav a:hover { color: var(--gold); }
-
-    /* MAIN SECTIONS */
-    main { padding: 60px 0; }
-    .card { background: var(--card-bg); padding: 30px; border-radius: 14px; border: 1px solid #eaeaea; box-shadow: 0 8px 24px rgba(0,0,0,0.08); margin-bottom: 40px; transition: transform 0.3s ease, border-color 0.3s ease; }
-    .card:hover { transform: translateY(-5px); border-color: var(--gold); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
-    .card h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--black); margin-bottom: 18px; border-left: 5px solid var(--gold); padding-left: 12px; }
-
-    .skill-list { display: flex; flex-wrap: wrap; gap: 12px; list-style: none; padding-left: 0; }
-    .skill-list li { background: var(--gold-soft); padding: 8px 16px; border-radius: 25px; font-size: 0.9rem; color: var(--black); font-weight: 600; border: 1px solid var(--gold); }
-
-    .timeline-item { margin-bottom: 25px; }
-    .timeline-item h3 { font-size: 1.1rem; color: var(--black); font-weight: 600; margin-bottom: 4px; }
-    .time { font-size: 0.9rem; color: var(--gold); }
-    .desc { margin-top: 8px; font-size: 0.95rem; color: var(--text-muted); line-height: 1.5; }
-
-    .project-link { display: inline-block; margin-top: 10px; color: var(--gold); font-weight: 600; border-bottom: 1px solid transparent; transition: border-bottom 0.3s ease; }
-    .project-link:hover { border-bottom: 1px solid var(--gold); }
-
-    .footer { background: var(--black); color: var(--gold); text-align: center; padding: 25px 0; margin-top: 60px; font-size: 0.9rem; }
-
-  @media (max-width: 900px) {
-  .hero-content { flex-direction: column; text-align: center; }
-  .hero-img img { margin-bottom: 20px; }
-    <!-- LOADER -->
-<div id="loader">
-  <div class="loader-content">
-    <h1>Chisola Nyala</h1>
-    <p>Electrical Engineer • Renewable Energy Specialist</p>
-
-    <div class="loader-line">
-      <span></span>
-    </div>
-  </div>
-</div>
+:root{
+--gold:#d4af37;
+--gold-light:#f4e6b0;
+--black:#0a0a0a;
+--white:#ffffff;
+--gray:#666;
 }
-  </style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#fff;
+color:#111;
+}
+
+/* LOADER */
+
+#loader{
+position:fixed;
+inset:0;
+background:#000;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+transition:1s;
+}
+
+.loader-content{
+text-align:center;
+}
+
+.loader-content h1{
+font-family:'Playfair Display',serif;
+font-size:4rem;
+color:var(--gold);
+}
+
+.loader-content p{
+color:#fff;
+margin-top:10px;
+}
+
+.loader-bar{
+width:280px;
+height:3px;
+background:#333;
+margin-top:25px;
+overflow:hidden;
+}
+
+.loader-bar span{
+display:block;
+height:100%;
+background:var(--gold);
+width:0%;
+animation:loading 2s linear forwards;
+}
+
+@keyframes loading{
+from{width:0;}
+to{width:100%;}
+}
+
+.loader-hide{
+opacity:0;
+visibility:hidden;
+}
+
+/* HERO */
+
+.hero{
+background:
+linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+url("images/bg.jpg");
+
+background-size:cover;
+background-position:center;
+
+padding:100px 20px;
+color:white;
+}
+
+.hero-content{
+max-width:1200px;
+margin:auto;
+
+display:flex;
+align-items:center;
+justify-content:center;
+gap:60px;
+flex-wrap:wrap;
+}
+
+.hero-image img{
+width:350px;
+height:350px;
+border-radius:50%;
+object-fit:cover;
+border:5px solid var(--gold);
+}
+
+.hero-text h1{
+font-size:4rem;
+font-family:'Playfair Display',serif;
+margin-bottom:10px;
+}
+
+.hero-text p{
+font-size:1.2rem;
+color:var(--gold-light);
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+padding:14px 28px;
+background:var(--gold);
+color:#000;
+font-weight:600;
+border-radius:30px;
+text-decoration:none;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+/* NAV */
+
+nav{
+background:#fff;
+padding:18px;
+border-bottom:1px solid #eee;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+.nav-container{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+}
+
+nav a{
+text-decoration:none;
+color:#333;
+font-weight:500;
+}
+
+nav a:hover{
+color:var(--gold);
+}
+
+/* CONTENT */
+
+.container{
+width:90%;
+max-width:1100px;
+margin:auto;
+padding:60px 0;
+}
+
+.card{
+background:white;
+padding:35px;
+border-radius:15px;
+border:1px solid #eee;
+margin-bottom:30px;
+box-shadow:0 8px 20px rgba(0,0,0,.05);
+}
+
+.card h2{
+font-family:'Playfair Display',serif;
+margin-bottom:20px;
+border-left:5px solid var(--gold);
+padding-left:12px;
+}
+
+/* HIGHLIGHTS */
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.stat{
+padding:25px;
+text-align:center;
+border:1px solid #eee;
+border-radius:12px;
+}
+
+.stat h3{
+color:var(--gold);
+font-size:2rem;
+}
+
+/* SERVICES */
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.service{
+padding:25px;
+border:1px solid #eee;
+border-radius:12px;
+transition:.3s;
+}
+
+.service:hover{
+transform:translateY(-5px);
+border-color:var(--gold);
+}
+
+.service h3{
+margin-bottom:10px;
+font-family:'Playfair Display',serif;
+}
+
+/* QUICK LINKS */
+
+.quick-links{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.link-card{
+padding:25px;
+border-radius:12px;
+background:#fafafa;
+border:1px solid #eee;
+text-align:center;
+}
+
+.link-card a{
+display:inline-block;
+margin-top:15px;
+color:var(--gold);
+font-weight:600;
+text-decoration:none;
+}
+
+/* FOOTER */
+
+footer{
+background:#000;
+color:var(--gold);
+text-align:center;
+padding:25px;
+}
+
+@media(max-width:768px){
+
+.hero-text h1{
+font-size:2.8rem;
+}
+
+.hero-image img{
+width:250px;
+height:250px;
+}
+
+}
+
+</style>
 </head>
 <body>
-   <!-- LOADER -->
+
+<!-- LOADER -->
+
 <div id="loader">
-  <div class="loader-content">
-    <h1>Chisola Nyala</h1>
-    <p>Electrical Engineer • Renewable Energy Specialist</p>
+<div class="loader-content">
+<h1>Chisola Nyala</h1>
+<p>Electrical Engineer • Renewable Energy Specialist</p>
 
-    <div class="loader-line">
-      <span></span>
-    </div>
-  </div>
-</div> <!-- HERO / INTRO WITH PROFILE IMAGE -->
+<div class="loader-bar">
+<span></span>
+</div>
+
+</div>
+</div>
+
+<!-- HERO -->
+
 <section class="hero">
-  <div class="hero-content container" style="display:flex; align-items:center; gap:30px; flex-wrap:wrap;">
-    <!-- Profile Image -->
-    <div class="hero-img">
-      <img src="images/Untitled design.png" alt="Chisola Nyala" style="border-radius:50%; border:4px solid var(--gold); box-shadow:0 0 20px rgba(212,175,55,0.4); width:400px; height:400px; object-fit:cover;">
-    </div>
-    <!-- Text Content -->
-    <div class="hero-text">
-      <h1>Chisola Nyala</h1>
-      <p>Electrical Engineer/Renewable Energy SpSpecialistp>p      <a href="contact.html" class="btn">Contact Me</a>
-    </div>
-  </div>
+
+<div class="hero-content">
+
+<div class="hero-image">
+<img src="images/Untitled design.png" alt="Chisola Nyala">
+</div>
+
+<div class="hero-text">
+<h1>Chisola Nyala</h1>
+<p>Electrical Engineer • Renewable Energy Specialist</p>
+
+<a href="contact.html" class="btn">Contact Me</a>
+</div>
+
+</div>
+
 </section>
 
-  </section>
+<!-- NAV -->
 
-  <nav>
-    <div class="container">
-      <a href="#about">About</a>
-      <a href="education.html">Education</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact Me</a>
+<nav>
+<div class="nav-container">
 
+<a href="index.html">Home</a>
+<a href="education.html">Education</a>
+<a href="projects.html">Projects</a>
+<a href="blog.html">Blog</a>
+<a href="learning.html">Learning Hub</a>
+<a href="contact.html">Contact</a>
 
-    </div>
-  </nav>
+</div>
+</nav>
 
-  <main class="container">
-    <section id="about" class="card">
-  <div class="about-container" style="display: flex; gap: 30px; flex-wrap: wrap; align-items: flex-start;">
-    <!-- Text Content -->
-    <div class="about-text" style="flex: 1; min-width: 250px;">
-      <h2>About Me</h2>
-      <p>He is an electrical engineer specializing in renewable energy, with a strong interest in the renewable energy industry. He actively researches and engages in sustainability-related initiatives and aims to contribute to creating a sustainable energy environment and supporting pro-poor energy communities.</p>
-      <p>He is a results-oriented engineering executive with a proven record of optimizing project outcomes through strategic management, technical excellence, and effective team leadership. He is passionate about addressing complex engineering challenges at the intersection of society, business, and energy systems. He is committed to advancing renewable technologies, improving energy efficiency, and expanding access to sustainable power solutions, while driving innovation in clean energy and delivering economical and sustainable engineering solutions that align with global sustainability goals and economic growth.</p>
-    </div>
+<!-- MAIN -->
 
-    <!-- Image -->
-    <div class="about-img" style="flex: 1; min-width: 250px;">
-      <img src="images/Untitled design.png" alt="Chisola Nyala" style="width: 100%; border-radius: 14px; object-fit: cover;">
-    </div>
-  </div>
-</section>
+<div class="container">
 
+<div class="card">
 
- <section id="skills" class="card">
-  <h2>Services</h2>
+<h2>About Me</h2>
 
-  <!-- Toggle Buttons -->
-  <div style="margin-bottom: 20px; display: flex; gap: 10px; justify-content: center;">
-    <button id="btn-software" style="padding: 8px 20px; border-radius: 25px; border: none; background: var(--gold); color: var(--black); font-weight: 600; cursor: pointer;">Software & Technical</button>
-    <!--<button id="btn-soft" style="padding: 8px 20px; border-radius: 25px; border: 1px solid var(--gold); background: var(--white); color: var(--black); font-weight: 600; cursor: pointer;"></button> -->
-  </div>
+<p>
+I am an Electrical Engineer and Renewable Energy Specialist with a strong passion for sustainable energy systems, technical innovation, and community-centered engineering solutions. My work focuses on renewable energy technologies, project management, energy access, and the development of practical solutions that support sustainable growth.
+</p>
 
-  <!-- Software & Technical Skills Card -->
-  <div id="software-skills">
-    <ul class="skill-list">
-      <li>Solar PV Design</li>
-      <li>Electrical System Design</li>
-      <li>Pump Sizing</li>
-      <li>Energy Storage</li>
-      <li>Technical Feasibility Studies</li>
-      <li>Remote Monitoring & Control</li>
-      <li>Site Coordination</li>
-      <li>O&M Planning</li>
-      <li>Pilot Project Management</li>
-      <li>Community Engagement</li>
-      <li>Logistics Coordination</li>
-      <li>Technical Supervision (on-site and remote)</li>
-    </ul>
-  </div>
+</div>
 
-  <!-- Soft Skills Card -->
-  <div id="soft-skills" style="display: none;">
-    <ul class="skill-list">
-      <li>Basic Graphic Design</li>
-      <li>Good Communication Skills</li>
-      <li>Versatile and Adaptable</li>
-      <li>Multicultural & Multidisciplinary Collaboration</li>
-      <li>Fast Learner</li>
-      <li>Positive Attitude</li>
-      <li>Strong Work Ethic</li>
-      <li>Passion for Impactful Engineering Work</li>
-      <li>Technical Documentation</li>
-      <li>Supplier Management</li>
-      <li>Team Coordination</li>
-      <li>Reporting</li>
-      <li>Stakeholder Engagement</li>
-      <li>Proposal Writing</li>
-    </ul>
-  </div>
-</section>
+<div class="card">
+
+<h2>Highlights</h2>
+
+<div class="stats">
+
+<div class="stat">
+<h3>MSc</h3>
+<p>Sustainable Engineering</p>
+</div>
+
+<div class="stat">
+<h3>BTech</h3>
+<p>Electrical Engineering</p>
+</div>
+
+<div class="stat">
+<h3>Research</h3>
+<p>Published Author</p>
+</div>
+
+<div class="stat">
+<h3>Energy</h3>
+<p>Renewable Specialist</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Services</h2>
+
+<div class="services">
+
+<div class="service">
+<h3>Solar PV Design</h3>
+<p>Design and optimization of solar energy systems.</p>
+</div>
+
+<div class="service">
+<h3>Energy Audits</h3>
+<p>Technical assessments and efficiency improvements.</p>
+</div>
+
+<div class="service">
+<h3>Project Management</h3>
+<p>Planning and supervision of engineering projects.</p>
+</div>
+
+<div class="service">
+<h3>Technical Consulting</h3>
+<p>Renewable energy and electrical engineering guidance.</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Explore More</h2>
+
+<div class="quick-links">
+
+<div class="link-card">
+<h3>Education</h3>
+<p>Academic background and research.</p>
+<a href="education.html">View</a>
+</div>
+
+<div class="link-card">
+<h3>Projects</h3>
+<p>Renewable energy and engineering projects.</p>
+<a href="projects.html">View</a>
+</div>
+
+<div class="link-card">
+<h3>Blog</h3>
+<p>Articles, insights and professional content.</p>
+<a href="blog.html">View</a>
+</div>
+
+<div class="link-card">
+<h3>Learning Hub</h3>
+<p>Educational content and YouTube resources.</p>
+<a href="learning.html">View</a>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 Chisola Nyala • Portfolio
+</footer>
 
 <script>
-  const btnSoftware = document.getElementById("btn-software");
-  const btnSoft = document.getElementById("btn-soft");
-  const softwareCard = document.getElementById("software-skills");
-  const softCard = document.getElementById("soft-skills");
 
-  btnSoftware.addEventListener("click", () => {
-    softwareCard.style.display = "block";
-    softCard.style.display = "none";
-    btnSoftware.style.background = "var(--gold)";
-    btnSoft.style.background = "var(--white)";
-    btnSoft.style.border = "1px solid var(--gold)";
-  });
+window.addEventListener("load",function(){
 
-  btnSoft.addEventListener("click", () => {
-    softwareCard.style.display = "none";
-    softCard.style.display = "block";
-    btnSoft.style.background = "var(--gold)";
-    btnSoftware.style.background = "var(--white)";
-    btnSoftware.style.border = "1px solid var(--gold)";
-  });
+setTimeout(function(){
+
+document.getElementById("loader")
+.classList.add("loader-hide");
+
+},2200);
+
+});
+
 </script>
-
-
-  </main>
-
-  <footer class="footer">
-    <p>© 2025 Chisola Nyala · Portfolio</p>
-  </footer>
 
 </body>
 </html>
