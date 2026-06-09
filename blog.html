@@ -1,1 +1,427 @@
-<html><body><h1>Digital Services</h1><div>Trusted By: Photon Engineering Services & Consultancy, Pindrop Express Cleaning, KBS Loans & Finance</div><div>★★★★★ Great service</div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | Chisola Nyala</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root{
+--gold:#d4af37;
+--black:#0b0b0b;
+--white:#ffffff;
+--text:#111;
+--muted:#666;
+--border:#e8e8e8;
+--soft:#fafafa;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:white;
+color:var(--text);
+line-height:1.7;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+.container{
+width:min(1100px,92%);
+margin:auto;
+}
+
+/* NAVBAR */
+
+.topbar{
+position:sticky;
+top:0;
+background:rgba(255,255,255,.96);
+backdrop-filter:blur(10px);
+border-bottom:1px solid var(--border);
+z-index:1000;
+}
+
+.topbar-inner{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:16px 0;
+}
+
+.brand{
+font-family:'Playfair Display',serif;
+font-size:1.4rem;
+font-weight:800;
+}
+
+.menu-container{
+position:relative;
+}
+
+.menu-btn{
+background:var(--gold);
+border:none;
+padding:12px 18px;
+border-radius:50px;
+font-weight:700;
+cursor:pointer;
+}
+
+.dropdown-menu{
+display:none;
+position:absolute;
+right:0;
+top:55px;
+width:240px;
+background:white;
+border:1px solid var(--border);
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+.dropdown-menu.show{
+display:block;
+}
+
+.dropdown-menu a{
+display:block;
+padding:14px 18px;
+font-weight:600;
+}
+
+.dropdown-menu a:hover{
+background:#f8f8f8;
+color:var(--gold);
+}
+
+/* HERO */
+
+.hero{
+background:
+linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.85)),
+url('images/bg.jpg');
+background-size:cover;
+background-position:center;
+padding:90px 20px;
+text-align:center;
+color:white;
+}
+
+.hero h1{
+font-family:'Playfair Display',serif;
+font-size:4rem;
+margin-bottom:15px;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+opacity:.9;
+}
+
+/* SEARCH */
+
+.search-box{
+max-width:500px;
+margin:40px auto 0;
+}
+
+.search-box input{
+width:100%;
+padding:15px;
+border-radius:50px;
+border:none;
+font-size:1rem;
+}
+
+/* FEATURED */
+
+.featured{
+padding:70px 0;
+}
+
+.featured-card{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+background:white;
+border:1px solid var(--border);
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,.05);
+}
+
+.featured-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.featured-content{
+padding:40px;
+}
+
+.tag{
+display:inline-block;
+background:#f6f1dc;
+color:#8a6a00;
+padding:6px 12px;
+border-radius:50px;
+font-size:.85rem;
+font-weight:700;
+margin-bottom:15px;
+}
+
+.featured-content h2{
+font-family:'Playfair Display',serif;
+font-size:2rem;
+margin-bottom:15px;
+}
+
+.featured-content p{
+color:var(--muted);
+margin-bottom:20px;
+}
+
+.read-btn{
+display:inline-block;
+padding:12px 22px;
+background:var(--gold);
+color:black;
+font-weight:700;
+border-radius:50px;
+}
+
+/* BLOG GRID */
+
+.blog-section{
+padding-bottom:70px;
+}
+
+.section-title{
+font-family:'Playfair Display',serif;
+font-size:2rem;
+margin-bottom:25px;
+border-left:5px solid var(--gold);
+padding-left:12px;
+}
+
+.blog-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.blog-card{
+background:white;
+border:1px solid var(--border);
+border-radius:18px;
+overflow:hidden;
+transition:.3s;
+}
+
+.blog-card:hover{
+transform:translateY(-5px);
+}
+
+.blog-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.blog-content{
+padding:25px;
+}
+
+.blog-content h3{
+font-family:'Playfair Display',serif;
+margin-bottom:10px;
+font-size:1.4rem;
+}
+
+.blog-content p{
+color:var(--muted);
+margin-bottom:15px;
+}
+
+.footer{
+background:black;
+color:var(--gold);
+text-align:center;
+padding:25px;
+}
+
+@media(max-width:850px){
+
+.featured-card{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:2.8rem;
+}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+<div class="container topbar-inner">
+
+<a class="brand" href="home.html">
+Chisola Nyala
+</a>
+
+<div class="menu-container">
+
+<button class="menu-btn" id="menuBtn">
+☰ Menu
+</button>
+
+<div class="dropdown-menu" id="dropdownMenu">
+<a href="home.html">Home</a>
+<a href="education.html">Education</a>
+<a href="projects.html">Projects</a>
+<a href="blog.html">Blog</a>
+<a href="learning.html">Learning Hub</a>
+<a href="contact.html">Book a Consultation</a>
+</div>
+
+</div>
+
+</div>
+</header>
+
+<section class="hero">
+
+<h1>Engineering Insights</h1>
+
+<p>
+Thoughts, lessons, and practical insights on renewable energy,
+engineering, sustainability, career growth, and personal development.
+</p>
+
+<div class="search-box">
+<input type="text" placeholder="Search articles...">
+</div>
+
+</section>
+
+<section class="featured">
+
+<div class="container">
+
+<div class="featured-card">
+
+<img src="images/blog1.jpg" alt="Featured Article">
+
+<div class="featured-content">
+
+<span class="tag">Featured Article</span>
+
+<h2>Simple Ways to Eat Well Without Overspending</h2>
+
+<p>
+Many people believe healthy eating is expensive, but with good planning,
+smart shopping habits, and simple meal preparation, nutritious diets can
+remain affordable.
+</p>
+
+<a href="#" class="read-btn">
+Read Article
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="blog-section">
+
+<div class="container">
+
+<h2 class="section-title">
+Latest Articles
+</h2>
+
+<div class="blog-grid">
+
+<div class="blog-card">
+<img src="images/blog2.jpg">
+
+<div class="blog-content">
+<h3>Renewable Energy in Everyday Life</h3>
+<p>
+How solar and renewable technologies are quietly changing homes and businesses.
+</p>
+<a href="#" class="read-btn">Read More</a>
+</div>
+</div>
+
+<div class="blog-card">
+<img src="images/blog3.jpg">
+
+<div class="blog-content">
+<h3>Career Lessons from Engineering</h3>
+<p>
+Professional insights from engineering projects, leadership and teamwork.
+</p>
+<a href="#" class="read-btn">Read More</a>
+</div>
+</div>
+
+<div class="blog-card">
+<img src="images/blog4.jpg">
+
+<div class="blog-content">
+<h3>The Future of Sustainable Energy</h3>
+<p>
+Key trends shaping the next generation of renewable energy systems.
+</p>
+<a href="#" class="read-btn">Read More</a>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer class="footer">
+© 2026 Chisola Nyala • Blog
+</footer>
+
+<script>
+const menuBtn = document.getElementById('menuBtn');
+const dropdownMenu = document.getElementById('dropdownMenu');
+
+menuBtn.addEventListener('click', () => {
+dropdownMenu.classList.toggle('show');
+});
+
+document.addEventListener('click', (e) => {
+if(!e.target.closest('.menu-container')){
+dropdownMenu.classList.remove('show');
+}
+});
+</script>
+
+</body>
+</html>
