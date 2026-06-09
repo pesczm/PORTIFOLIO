@@ -1134,4 +1134,554 @@
   </footer>
 
 </body>
+</html>      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* HERO / LANDING */
+    .hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.72)),
+        url('images/bg.jpg') center/cover no-repeat;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      padding: 40px 0;
+      position: relative;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 40px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .hero-text {
+      padding: 20px 0;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 999px;
+      color: var(--gold-soft);
+      font-size: 0.9rem;
+      margin-bottom: 18px;
+      background: rgba(255, 255, 255, 0.05);
+      letter-spacing: 0.3px;
+    }
+
+    .hero-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 6vw, 4.8rem);
+      line-height: 1.05;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-text p {
+      font-size: 1.05rem;
+      color: #efefef;
+      max-width: 650px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 26px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.25s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+      min-width: 190px;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: #be972f;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.28);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      border-color: var(--gold);
+      color: var(--gold-soft);
+    }
+
+    .hero-mini {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .mini-pill {
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #f5f5f5;
+      font-size: 0.92rem;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--text-dark);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .hero-card img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 18px;
+    }
+
+    .hero-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+      color: var(--black);
+    }
+
+    .hero-card p {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px 0;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--black);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    /* SECTIONS */
+    main {
+      padding: 60px 0 10px;
+      background: linear-gradient(to bottom, #fff, #fff);
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      border-radius: 18px;
+      padding: 32px;
+      margin-bottom: 26px;
+    }
+
+    .card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      margin-bottom: 18px;
+      padding-left: 12px;
+      border-left: 5px solid var(--gold);
+      color: var(--black);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .about-text p {
+      margin-bottom: 14px;
+      color: var(--text-dark);
+    }
+
+    .about-image img {
+      border-radius: 16px;
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      border: 1px solid var(--border);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 18px;
+    }
+
+    .stat {
+      padding: 22px;
+      text-align: center;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--bg-soft);
+      transition: 0.25s ease;
+    }
+
+    .stat:hover {
+      transform: translateY(-4px);
+      border-color: rgba(212, 175, 55, 0.65);
+    }
+
+    .stat h3 {
+      font-size: 2rem;
+      color: var(--gold);
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 6px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+    }
+
+    .service {
+      padding: 22px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff;
+      transition: 0.25s ease;
+    }
+
+    .service:hover {
+      transform: translateY(-4px);
+      border-color: rgba(212, 175, 55, 0.75);
+    }
+
+    .service h3 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 8px;
+      color: var(--black);
+    }
+
+    .quick-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .link-card {
+      padding: 22px;
+      border-radius: 14px;
+      background: #fafafa;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .link-card h3 {
+      margin-bottom: 8px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .link-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .link-card a {
+      display: inline-block;
+      margin-top: 14px;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    footer {
+      background: var(--black);
+      color: var(--gold);
+      text-align: center;
+      padding: 24px 16px;
+      margin-top: 35px;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-content,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 30px 0 40px;
+      }
+
+      .hero-card img {
+        height: 360px;
+      }
+
+      .about-image img {
+        height: 360px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 24px 18px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .nav-inner {
+        justify-content: center;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO / INTRO -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <span class="eyebrow">Electrical Engineer • Renewable Energy Specialist</span>
+        <h1>Chisola Nyala</h1>
+        <p>
+          I design practical, sustainable, and impactful engineering solutions with a focus on renewable energy,
+          technical innovation, and community-centered development.
+        </p>
+
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary">Book a Consultation</a>
+          <a href="#main-site" class="btn btn-secondary">Proceed to Website</a>
+        </div>
+
+        <div class="hero-mini">
+          <span class="mini-pill">Solar PV Design</span>
+          <span class="mini-pill">Project Management</span>
+          <span class="mini-pill">Technical Consulting</span>
+          <span class="mini-pill">Research & Publications</span>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <img src="images/Untitled design.png" alt="Chisola Nyala">
+        <h3>Professional Portfolio</h3>
+        <p>
+          Explore education, projects, blog content, and learning resources from my YouTube channel.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NAVIGATION -->
+  <nav id="main-site">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand">Chisola Nyala</a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="education.html">Education</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="learning.html">Learning Hub</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+      <!-- ABOUT -->
+      <section class="card">
+        <h2>About Me</h2>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              I am an Electrical Engineer and Renewable Energy Specialist with a strong passion for sustainable energy systems,
+              technical innovation, and community-focused engineering solutions.
+            </p>
+            <p>
+              My work focuses on renewable energy technologies, project management, energy access, and the development of practical
+              solutions that support sustainable growth. I am committed to delivering economical, efficient, and impactful engineering
+              solutions.
+            </p>
+            <p>
+              This website also includes blog articles and educational content from my YouTube channel, designed to share knowledge and
+              inspire others interested in engineering and renewable energy.
+            </p>
+          </div>
+
+          <div class="about-image">
+            <img src="images/Untitled design.png" alt="Chisola Nyala portrait">
+          </div>
+        </div>
+      </section>
+
+      <!-- HIGHLIGHTS -->
+      <section class="card">
+        <h2>Highlights</h2>
+        <div class="stats">
+          <div class="stat">
+            <h3>MSc</h3>
+            <p>Sustainable Engineering</p>
+          </div>
+
+          <div class="stat">
+            <h3>BTech</h3>
+            <p>Electrical Engineering</p>
+          </div>
+
+          <div class="stat">
+            <h3>Research</h3>
+            <p>Published Author</p>
+          </div>
+
+          <div class="stat">
+            <h3>Energy</h3>
+            <p>Renewable Specialist</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section class="card">
+        <h2>Services</h2>
+        <div class="service-grid">
+          <div class="service">
+            <h3>Solar PV Design</h3>
+            <p>Design and optimization of solar energy systems for residential, commercial, and rural applications.</p>
+          </div>
+
+          <div class="service">
+            <h3>Energy Audits</h3>
+            <p>Technical assessments and recommendations to improve efficiency and reduce energy waste.</p>
+          </div>
+
+          <div class="service">
+            <h3>Project Management</h3>
+            <p>Planning, coordination, and supervision of engineering and renewable energy projects.</p>
+          </div>
+
+          <div class="service">
+            <h3>Technical Consulting</h3>
+            <p>Renewable energy guidance, feasibility input, and engineering support for sustainable solutions.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUICK LINKS -->
+      <section class="card">
+        <h2>Explore More</h2>
+        <div class="quick-links">
+          <div class="link-card">
+            <h3>Education</h3>
+            <p>Academic background, thesis work, and technical training.</p>
+            <a href="education.html">View Education</a>
+          </div>
+
+          <div class="link-card">
+            <h3>Projects</h3>
+            <p>Renewable energy and engineering projects.</p>
+            <a href="projects.html">View Projects</a>
+          </div>
+
+          <div class="link-card">
+            <h3>Blog</h3>
+            <p>Articles, insights, and professional content.</p>
+            <a href="blog.html">Read Blog</a>
+          </div>
+
+          <div class="link-card">
+            <h3>Learning Hub</h3>
+            <p>Educational videos and YouTube-based learning content.</p>
+            <a href="learning.html">Open Learning Hub</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 Chisola Nyala • Portfolio
+  </footer>
+
+</body>
 </html>
