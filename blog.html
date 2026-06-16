@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <title>Blog | Chisola Nyala</title>
 
 <style>
@@ -258,10 +260,80 @@ margin-bottom:15px;
 }
 
 .footer{
-background:black;
-color:var(--gold);
-text-align:center;
-padding:25px;
+  background:#0f172a;
+  color:#e5e7eb;
+  margin-top:40px;
+  padding:50px 0 20px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.3fr 1fr 1fr 1fr;
+  gap:30px;
+}
+
+.footer-section h3,
+.footer-section h4{
+  color:#fff;
+  margin-bottom:14px;
+  font-family:'Playfair Display',serif;
+}
+
+.footer-section p,
+.footer-section a,
+.footer-section li{
+  color:#cbd5e1;
+  font-size:0.95rem;
+}
+
+.footer-section li{
+  margin-bottom:10px;
+}
+
+.footer-section a:hover{
+  color:#d4af37;
+}
+
+/* SOCIAL ICONS */
+.social-icons{
+  display:flex;
+  gap:12px;
+  margin-top:1rem;
+  flex-wrap:wrap;
+}
+
+.social-icons a{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.08);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.social-icons a:hover{
+  transform:translateY(-3px);
+  background:#d4af37;
+  color:#0f172a;
+}
+
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,0.1);
+  margin-top:35px;
+  padding-top:18px;
+  text-align:center;
+  color:#94a3b8;
+  font-size:0.9rem;
+}
+
+@media(max-width:900px){
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
 }
 
 @media(max-width:850px){
@@ -405,7 +477,67 @@ Key trends shaping the next generation of renewable energy systems.
 </section>
 
 <footer class="footer">
-© 2026 Chisola Nyala • Blog
+  <div class="container footer-grid">
+
+    <div class="footer-section">
+      <h3>Chisola Nyala</h3>
+      <p>
+        Electrical Engineer and Renewable Energy Specialist focused on sustainable engineering solutions,
+        clean energy innovation, and practical impact.
+      </p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Contact</h4>
+      <p>Email: inquiry@chisolanyala.com</p>
+      <p>Phone: +260 977 441 348</p>
+      <p>Lusaka, Zambia</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Connect</h4>
+
+      <div class="social-icons">
+
+        <a href="https://www.linkedin.com/in/chisola-nyala-309042158/" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+
+        <a href="https://youtube.com/@yourchannel" target="_blank" aria-label="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+
+        <a href="https://facebook.com/yourprofile" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="https://x.com/yourusername" target="_blank" aria-label="X">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+
+        <a href="mailto:inquiry@chisolanyala.com" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Chisola Nyala. All Rights Reserved.</p>
+  </div>
 </footer>
 
 <script>
