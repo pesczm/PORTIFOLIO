@@ -17,15 +17,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 --text:#111;
 --muted:#666;
 --border:#e8e8e8;
---soft:#fafafa;
 }
 
-/* RESET */
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
 font-family:'Poppins',sans-serif;
@@ -34,19 +28,14 @@ color:var(--text);
 line-height:1.7;
 }
 
-a{
-text-decoration:none;
-color:inherit;
-}
+a{text-decoration:none;color:inherit;}
 
 .container{
 width:min(1100px,92%);
 margin:auto;
 }
 
-/* =========================
-   HEADER (HOME STYLE)
-========================= */
+/* ================= HEADER (HOME STYLE) ================= */
 
 .topbar{
 position:sticky;
@@ -69,14 +58,12 @@ gap:20px;
 font-family:'Playfair Display',serif;
 font-size:1.5rem;
 font-weight:700;
-white-space:nowrap;
 }
 
 .nav-links{
 display:flex;
 gap:20px;
 align-items:center;
-flex-wrap:wrap;
 }
 
 .nav-links a{
@@ -106,6 +93,7 @@ cursor:pointer;
 }
 
 /* HERO */
+
 .hero{
 background:
 linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.85)),
@@ -129,64 +117,9 @@ margin:auto;
 opacity:.9;
 }
 
-/* SEARCH */
-.search-box{
-max-width:500px;
-margin:40px auto 0;
-}
-
-.search-box input{
-width:100%;
-padding:15px;
-border-radius:50px;
-border:none;
-font-size:1rem;
-}
-
-/* FEATURED */
-.featured{
-padding:70px 0;
-}
-
-.featured-card{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:30px;
-background:white;
-border:1px solid var(--border);
-border-radius:20px;
-overflow:hidden;
-box-shadow:0 10px 25px rgba(0,0,0,.05);
-}
-
-.featured-content{
-padding:40px;
-}
-
-.tag{
-display:inline-block;
-background:#f6f1dc;
-color:#8a6a00;
-padding:6px 12px;
-border-radius:50px;
-font-size:.85rem;
-font-weight:700;
-margin-bottom:15px;
-}
-
-.read-btn{
-display:inline-block;
-padding:12px 22px;
-background:var(--gold);
-color:black;
-font-weight:700;
-border-radius:50px;
-}
-
 /* BLOG GRID */
-.blog-section{
-padding-bottom:70px;
-}
+
+.blog-section{padding:70px 0;}
 
 .section-title{
 font-family:'Playfair Display',serif;
@@ -210,9 +143,7 @@ overflow:hidden;
 transition:.3s;
 }
 
-.blog-card:hover{
-transform:translateY(-5px);
-}
+.blog-card:hover{transform:translateY(-5px);}
 
 .blog-card img{
 width:100%;
@@ -220,9 +151,7 @@ height:220px;
 object-fit:cover;
 }
 
-.blog-content{
-padding:25px;
-}
+.blog-content{padding:25px;}
 
 .blog-content h3{
 font-family:'Playfair Display',serif;
@@ -233,6 +162,16 @@ font-size:1.4rem;
 .blog-content p{
 color:var(--muted);
 margin-bottom:15px;
+}
+
+/* BUTTON */
+.read-btn{
+display:inline-block;
+padding:12px 22px;
+background:var(--gold);
+color:black;
+font-weight:700;
+border-radius:50px;
 }
 
 /* FOOTER */
@@ -261,10 +200,6 @@ font-family:'Playfair Display',serif;
 .footer-section li{
 color:#cbd5e1;
 font-size:0.95rem;
-}
-
-.footer-section a:hover{
-color:var(--gold);
 }
 
 .social-icons{
@@ -303,14 +238,6 @@ font-size:0.9rem;
 
 /* MOBILE */
 @media(max-width:900px){
-.featured-card{
-grid-template-columns:1fr;
-}
-
-.hero h1{
-font-size:2.8rem;
-}
-
 .nav-links{
 display:none;
 flex-direction:column;
@@ -323,20 +250,18 @@ padding:20px;
 border-bottom:1px solid #ddd;
 }
 
-.nav-links.show{
-display:flex;
-}
+.nav-links.show{display:flex;}
 
-.menu-toggle{
-display:block;
-}
+.menu-toggle{display:block;}
+
+.hero h1{font-size:2.8rem;}
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER (HOME STYLE) -->
+<!-- HEADER -->
 <header class="topbar">
   <div class="container topbar-inner">
 
@@ -358,79 +283,51 @@ display:block;
 
 <!-- HERO -->
 <section class="hero">
-  <h1>Engineering Insights</h1>
-  <p>
-    Thoughts, lessons, and practical insights on renewable energy,
-    engineering, sustainability, career growth, and personal development.
-  </p>
-
-  <div class="search-box">
-    <input type="text" placeholder="Search articles...">
-  </div>
+<h1>Engineering Insights</h1>
+<p>
+Articles on renewable energy systems, electrical engineering principles,
+project experience, and sustainable technology innovation.
+</p>
 </section>
 
-<!-- FEATURED -->
-<section class="featured">
-  <div class="container">
-
-    <div class="featured-card">
-      <img src="images/blog1.jpg" alt="Featured Article">
-
-      <div class="featured-content">
-        <span class="tag">Featured Article</span>
-
-        <h2>Simple Ways to Eat Well Without Overspending</h2>
-
-        <p>
-          Many people believe healthy eating is expensive, but with good planning,
-          smart shopping habits, and simple meal preparation, nutritious diets can remain affordable.
-        </p>
-
-        <a href="#" class="read-btn">Read Article</a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- BLOG GRID -->
+<!-- BLOG -->
 <section class="blog-section">
-  <div class="container">
+<div class="container">
 
-    <h2 class="section-title">Latest Articles</h2>
+<h2 class="section-title">Latest Articles</h2>
 
-    <div class="blog-grid">
+<div class="blog-grid">
 
-      <div class="blog-card">
-        <img src="images/blog2.jpg">
-        <div class="blog-content">
-          <h3>Renewable Energy in Everyday Life</h3>
-          <p>How solar and renewable technologies are quietly changing homes and businesses.</p>
-          <a href="#" class="read-btn">Read More</a>
-        </div>
-      </div>
+<div class="blog-card">
+<img src="images/blog2.jpg">
+<div class="blog-content">
+<h3>Design Principles of Solar PV Systems</h3>
+<p>Understanding system sizing, efficiency, and real-world application of solar energy systems.</p>
+<a href="#" class="read-btn">Read More</a>
+</div>
+</div>
 
-      <div class="blog-card">
-        <img src="images/blog3.jpg">
-        <div class="blog-content">
-          <h3>Career Lessons from Engineering</h3>
-          <p>Professional insights from engineering projects, leadership and teamwork.</p>
-          <a href="#" class="read-btn">Read More</a>
-        </div>
-      </div>
+<div class="blog-card">
+<img src="images/blog3.jpg">
+<div class="blog-content">
+<h3>Electrical Engineering in Practice</h3>
+<p>How theory translates into real engineering solutions in field projects.</p>
+<a href="#" class="read-btn">Read More</a>
+</div>
+</div>
 
-      <div class="blog-card">
-        <img src="images/blog4.jpg">
-        <div class="blog-content">
-          <h3>The Future of Sustainable Energy</h3>
-          <p>Key trends shaping the next generation of renewable energy systems.</p>
-          <a href="#" class="read-btn">Read More</a>
-        </div>
-      </div>
+<div class="blog-card">
+<img src="images/blog4.jpg">
+<div class="blog-content">
+<h3>Future of Renewable Energy Systems</h3>
+<p>Exploring trends shaping smart grids, storage, and clean energy integration.</p>
+<a href="#" class="read-btn">Read More</a>
+</div>
+</div>
 
-    </div>
+</div>
 
-  </div>
+</div>
 </section>
 
 <!-- FOOTER -->
@@ -439,7 +336,7 @@ display:block;
 
     <div class="footer-section">
       <h3>Chisola Nyala</h3>
-      <p>Electrical Engineer and Renewable Energy Specialist focused on sustainable engineering solutions.</p>
+      <p>Electrical Engineer focused on renewable energy systems and sustainable engineering solutions.</p>
     </div>
 
     <div class="footer-section">
@@ -479,7 +376,7 @@ display:block;
 
 <script>
 function toggleMenu(){
-  document.getElementById("navMenu").classList.toggle("show");
+document.getElementById("navMenu").classList.toggle("show");
 }
 </script>
 
