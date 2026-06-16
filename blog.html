@@ -344,11 +344,25 @@ body{
 
 <body>
 
-<header class="topbar">
-<div class="container topbar-inner">
-  <a class="brand" href="home.html">Chisola Nyala</a>
-</div>
-</header>
+ <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="home.html">Chisola Nyala</a>
+
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+        ☰
+      </button>
+
+      <nav class="nav-links" id="mobileMenu" aria-label="Primary">
+        <a href="home.html">Home</a>
+        <a href="education.html">Education</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="learning.html">Learning Hub</a>
+        <a href="contact.html">Consultation</a>
+      </nav>
+    </div>
+  </header>
+
 
 <!-- HERO -->
 <section class="hero">
