@@ -3,498 +3,485 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
 <title>Blog | Chisola Nyala</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root{
-  --gold:#d4af37;
-  --black:#0b0b0b;
-  --white:#ffffff;
-  --text:#111;
-  --muted:#666;
-  --border:#e8e8e8;
-  --soft:#fafafa;
+--gold:#d4af37;
+--black:#0b0b0b;
+--white:#ffffff;
+--text:#111;
+--muted:#666;
+--border:#e8e8e8;
+--soft:#fafafa;
 }
 
+/* RESET */
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-  font-family:'Poppins',sans-serif;
-  background:white;
-  color:var(--text);
-  line-height:1.7;
+font-family:'Poppins',sans-serif;
+background:white;
+color:var(--text);
+line-height:1.7;
 }
 
-/* NAV */
-.topbar{
-  position:sticky;
-  top:0;
-  background:rgba(255,255,255,.96);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--border);
-  z-index:1000;
+a{
+text-decoration:none;
+color:inherit;
 }
 
 .container{
-  width:min(1100px,92%);
-  margin:auto;
+width:min(1100px,92%);
+margin:auto;
+}
+
+/* =========================
+   HEADER (HOME STYLE)
+========================= */
+
+.topbar{
+position:sticky;
+top:0;
+z-index:1000;
+background:rgba(255,255,255,.96);
+backdrop-filter:blur(10px);
+border-bottom:1px solid var(--border);
 }
 
 .topbar-inner{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:16px 0;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:18px 0;
+gap:20px;
 }
 
 .brand{
-  font-family:'Playfair Display',serif;
-  font-size:1.4rem;
-  font-weight:800;
+font-family:'Playfair Display',serif;
+font-size:1.5rem;
+font-weight:700;
+white-space:nowrap;
 }
 
-/* HERO (NEW PREMIUM STYLE) */
+.nav-links{
+display:flex;
+gap:20px;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.nav-links a{
+font-weight:600;
+color:var(--muted);
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:var(--gold);
+}
+
+.nav-cta{
+background:var(--gold);
+color:#000;
+padding:12px 20px;
+border-radius:999px;
+font-weight:700;
+}
+
+.menu-toggle{
+display:none;
+background:none;
+border:none;
+font-size:2rem;
+cursor:pointer;
+}
+
+/* HERO */
 .hero{
-  background:
-    linear-gradient(rgba(0,0,0,.85), rgba(0,0,0,.85)),
-    url('images/bg.jpg');
-  background-size:cover;
-  background-position:center;
-  padding:110px 20px 80px;
-  text-align:center;
-  color:white;
+background:
+linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.85)),
+url('images/bg.jpg');
+background-size:cover;
+background-position:center;
+padding:90px 20px;
+text-align:center;
+color:white;
 }
 
 .hero h1{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(2.8rem,5vw,4.5rem);
-  margin-bottom:10px;
+font-family:'Playfair Display',serif;
+font-size:4rem;
+margin-bottom:15px;
 }
 
 .hero p{
-  max-width:700px;
-  margin:auto;
-  color:#ddd;
+max-width:700px;
+margin:auto;
+opacity:.9;
 }
 
-/* FILTER BAR (NEW FEATURE) */
-.filter-bar{
-  margin-top:40px;
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  flex-wrap:wrap;
+/* SEARCH */
+.search-box{
+max-width:500px;
+margin:40px auto 0;
 }
 
-.filter{
-  padding:10px 18px;
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,0.3);
-  color:white;
-  font-size:.9rem;
-  cursor:pointer;
-  transition:.3s;
+.search-box input{
+width:100%;
+padding:15px;
+border-radius:50px;
+border:none;
+font-size:1rem;
 }
 
-.filter:hover{
-  background:var(--gold);
-  color:black;
-  border-color:var(--gold);
-}
-
-/* FEATURED ARTICLE (IMPROVED) */
+/* FEATURED */
 .featured{
-  padding:70px 0;
+padding:70px 0;
 }
 
 .featured-card{
-  display:grid;
-  grid-template-columns:1.2fr 1fr;
-  gap:30px;
-  background:white;
-  border-radius:20px;
-  overflow:hidden;
-  border:1px solid var(--border);
-  box-shadow:0 15px 35px rgba(0,0,0,.06);
-}
-
-.featured-card img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+background:white;
+border:1px solid var(--border);
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,.05);
 }
 
 .featured-content{
-  padding:40px;
+padding:40px;
 }
 
 .tag{
-  display:inline-block;
-  padding:6px 12px;
-  border-radius:999px;
-  background:#f6f1dc;
-  color:#8a6a00;
-  font-weight:700;
-  font-size:.8rem;
-  margin-bottom:15px;
+display:inline-block;
+background:#f6f1dc;
+color:#8a6a00;
+padding:6px 12px;
+border-radius:50px;
+font-size:.85rem;
+font-weight:700;
+margin-bottom:15px;
 }
 
-.featured-content h2{
-  font-family:'Playfair Display',serif;
-  font-size:2rem;
-  margin-bottom:12px;
+.read-btn{
+display:inline-block;
+padding:12px 22px;
+background:var(--gold);
+color:black;
+font-weight:700;
+border-radius:50px;
 }
 
-.featured-content p{
-  color:var(--muted);
-  margin-bottom:20px;
-}
-
-.btn{
-  display:inline-block;
-  padding:12px 22px;
-  background:var(--gold);
-  color:black;
-  font-weight:700;
-  border-radius:999px;
-}
-
-/* BLOG FEED (NEW MAGAZINE STYLE) */
+/* BLOG GRID */
 .blog-section{
-  padding:20px 0 80px;
+padding-bottom:70px;
 }
 
 .section-title{
-  font-family:'Playfair Display',serif;
-  font-size:2rem;
-  margin-bottom:25px;
-  border-left:5px solid var(--gold);
-  padding-left:12px;
+font-family:'Playfair Display',serif;
+font-size:2rem;
+margin-bottom:25px;
+border-left:5px solid var(--gold);
+padding-left:12px;
 }
 
 .blog-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:25px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
 }
 
-/* CARD REDESIGN */
 .blog-card{
-  background:white;
-  border:1px solid var(--border);
-  border-radius:16px;
-  overflow:hidden;
-  transition:.3s;
-  position:relative;
+background:white;
+border:1px solid var(--border);
+border-radius:18px;
+overflow:hidden;
+transition:.3s;
 }
 
 .blog-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 15px 30px rgba(0,0,0,.08);
+transform:translateY(-5px);
 }
 
 .blog-card img{
-  width:100%;
-  height:200px;
-  object-fit:cover;
+width:100%;
+height:220px;
+object-fit:cover;
 }
 
 .blog-content{
-  padding:22px;
-}
-
-.meta{
-  font-size:.8rem;
-  color:var(--muted);
-  margin-bottom:8px;
+padding:25px;
 }
 
 .blog-content h3{
-  font-family:'Playfair Display',serif;
-  margin-bottom:10px;
+font-family:'Playfair Display',serif;
+margin-bottom:10px;
+font-size:1.4rem;
 }
 
-.read{
-  color:var(--gold);
-  font-weight:700;
-  display:inline-block;
-  margin-top:10px;
-}
-
-/* NEWSLETTER (NEW SECTION) */
-.newsletter{
-  background:#0b0b0b;
-  color:white;
-  padding:70px 20px;
-  text-align:center;
-  border-radius:20px;
-  margin-bottom:60px;
-}
-
-.newsletter h2{
-  font-family:'Playfair Display',serif;
-  margin-bottom:10px;
-}
-
-.newsletter p{
-  color:#ccc;
-  margin-bottom:20px;
-}
-
-.newsletter input{
-  padding:12px 16px;
-  width:260px;
-  border-radius:999px;
-  border:none;
-  outline:none;
-}
-
-.newsletter button{
-  padding:12px 20px;
-  border:none;
-  border-radius:999px;
-  background:var(--gold);
-  font-weight:700;
-  cursor:pointer;
-  margin-left:8px;
+.blog-content p{
+color:var(--muted);
+margin-bottom:15px;
 }
 
 /* FOOTER */
 .footer{
-  background:#0f172a;
-  color:#e5e7eb;
-  padding:50px 0 20px;
-  margin-top:40px;
+background:#0f172a;
+color:#e5e7eb;
+margin-top:40px;
+padding:50px 0 20px;
 }
 
 .footer-grid{
-  display:grid;
-  grid-template-columns:1.3fr 1fr 1fr 1fr;
-  gap:30px;
+display:grid;
+grid-template-columns:1.3fr 1fr 1fr 1fr;
+gap:30px;
 }
 
 .footer-section h3,
 .footer-section h4{
-  color:#fff;
-  font-family:'Playfair Display',serif;
-  margin-bottom:14px;
+color:#fff;
+margin-bottom:14px;
+font-family:'Playfair Display',serif;
 }
 
 .footer-section p,
 .footer-section a,
 .footer-section li{
-  color:#cbd5e1;
-  font-size:.95rem;
+color:#cbd5e1;
+font-size:0.95rem;
 }
 
 .footer-section a:hover{
-  color:var(--gold);
+color:var(--gold);
 }
 
 .social-icons{
-  display:flex;
-  gap:12px;
-  margin-top:1rem;
+display:flex;
+gap:12px;
+margin-top:1rem;
+flex-wrap:wrap;
 }
 
 .social-icons a{
-  width:42px;
-  height:42px;
-  border-radius:50%;
-  background:rgba(255,255,255,0.08);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:white;
-  transition:.3s;
+width:42px;
+height:42px;
+border-radius:50%;
+background:rgba(255,255,255,0.08);
+color:#fff;
+display:flex;
+align-items:center;
+justify-content:center;
+transition:0.3s;
 }
 
 .social-icons a:hover{
-  background:var(--gold);
-  color:#0f172a;
+transform:translateY(-3px);
+background:var(--gold);
+color:#0f172a;
 }
 
 .footer-bottom{
-  border-top:1px solid rgba(255,255,255,0.1);
-  margin-top:35px;
-  padding-top:18px;
-  text-align:center;
-  color:#94a3b8;
+border-top:1px solid rgba(255,255,255,0.1);
+margin-top:35px;
+padding-top:18px;
+text-align:center;
+color:#94a3b8;
+font-size:0.9rem;
 }
 
-/* RESPONSIVE */
+/* MOBILE */
 @media(max-width:900px){
-  .featured-card,
-  .footer-grid{
-    grid-template-columns:1fr;
-  }
+.featured-card{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:2.8rem;
+}
+
+.nav-links{
+display:none;
+flex-direction:column;
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:white;
+padding:20px;
+border-bottom:1px solid #ddd;
+}
+
+.nav-links.show{
+display:flex;
+}
+
+.menu-toggle{
+display:block;
+}
 }
 </style>
 </head>
 
 <body>
 
- <header class="topbar">
-    <div class="container topbar-inner">
-      <a class="brand" href="home.html">Chisola Nyala</a>
+<!-- HEADER (HOME STYLE) -->
+<header class="topbar">
+  <div class="container topbar-inner">
 
-      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
-        ☰
-      </button>
+    <a class="brand" href="home.html">Chisola Nyala</a>
 
-      <nav class="nav-links" id="mobileMenu" aria-label="Primary">
-        <a href="home.html">Home</a>
-        <a href="education.html">Education</a>
-        <a href="projects.html">Projects</a>
-        <a href="blog.html">Blog</a>
-        <a href="learning.html">Learning Hub</a>
-        <a href="contact.html">Consultation</a>
-      </nav>
-    </div>
-  </header>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
+    <nav class="nav-links" id="navMenu">
+      <a href="home.html">Home</a>
+      <a href="education.html">Education</a>
+      <a href="projects.html">Projects</a>
+      <a href="blog.html">Blog</a>
+      <a href="learning.html">Learning Hub</a>
+      <a href="contact.html" class="nav-cta">Book Consultation</a>
+    </nav>
+
+  </div>
+</header>
 
 <!-- HERO -->
 <section class="hero">
   <h1>Engineering Insights</h1>
-  <p>Ideas, lessons, and reflections on renewable energy, engineering, career growth, and real-world problem solving.</p>
+  <p>
+    Thoughts, lessons, and practical insights on renewable energy,
+    engineering, sustainability, career growth, and personal development.
+  </p>
 
-  <div class="filter-bar">
-    <div class="filter">All</div>
-    <div class="filter">Renewable Energy</div>
-    <div class="filter">Career</div>
-    <div class="filter">Engineering</div>
-    <div class="filter">Sustainability</div>
+  <div class="search-box">
+    <input type="text" placeholder="Search articles...">
   </div>
 </section>
 
 <!-- FEATURED -->
 <section class="featured">
-<div class="container">
+  <div class="container">
 
-  <div class="featured-card">
-    <img src="images/blog1.jpg">
+    <div class="featured-card">
+      <img src="images/blog1.jpg" alt="Featured Article">
 
-    <div class="featured-content">
-      <span class="tag">Featured</span>
-      <h2>Building a Career in Renewable Energy Engineering</h2>
-      <p>
-        A practical guide on how to enter the renewable energy sector,
-        what skills matter most, and how to grow in a competitive engineering world.
-      </p>
-      <a class="btn" href="#">Read Article</a>
+      <div class="featured-content">
+        <span class="tag">Featured Article</span>
+
+        <h2>Simple Ways to Eat Well Without Overspending</h2>
+
+        <p>
+          Many people believe healthy eating is expensive, but with good planning,
+          smart shopping habits, and simple meal preparation, nutritious diets can remain affordable.
+        </p>
+
+        <a href="#" class="read-btn">Read Article</a>
+      </div>
     </div>
 
   </div>
-
-</div>
 </section>
 
-<!-- BLOG -->
+<!-- BLOG GRID -->
 <section class="blog-section">
-<div class="container">
+  <div class="container">
 
-<h2 class="section-title">Latest Articles</h2>
+    <h2 class="section-title">Latest Articles</h2>
 
-<div class="blog-grid">
+    <div class="blog-grid">
 
-  <div class="blog-card">
-    <img src="images/blog2.jpg">
-    <div class="blog-content">
-      <div class="meta">Renewable Energy • 5 min read</div>
-      <h3>Solar Energy in Africa: Opportunities Ahead</h3>
-      <p>How solar adoption is transforming energy access across the continent.</p>
-      <a class="read" href="#">Read More →</a>
+      <div class="blog-card">
+        <img src="images/blog2.jpg">
+        <div class="blog-content">
+          <h3>Renewable Energy in Everyday Life</h3>
+          <p>How solar and renewable technologies are quietly changing homes and businesses.</p>
+          <a href="#" class="read-btn">Read More</a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <img src="images/blog3.jpg">
+        <div class="blog-content">
+          <h3>Career Lessons from Engineering</h3>
+          <p>Professional insights from engineering projects, leadership and teamwork.</p>
+          <a href="#" class="read-btn">Read More</a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <img src="images/blog4.jpg">
+        <div class="blog-content">
+          <h3>The Future of Sustainable Energy</h3>
+          <p>Key trends shaping the next generation of renewable energy systems.</p>
+          <a href="#" class="read-btn">Read More</a>
+        </div>
+      </div>
+
     </div>
+
   </div>
-
-  <div class="blog-card">
-    <img src="images/blog3.jpg">
-    <div class="blog-content">
-      <div class="meta">Career • 4 min read</div>
-      <h3>What I Wish I Knew as a Young Engineer</h3>
-      <p>Lessons from real projects, mistakes, and professional growth.</p>
-      <a class="read" href="#">Read More →</a>
-    </div>
-  </div>
-
-  <div class="blog-card">
-    <img src="images/blog4.jpg">
-    <div class="blog-content">
-      <div class="meta">Sustainability • 6 min read</div>
-      <h3>The Future of Clean Energy Systems</h3>
-      <p>Trends shaping global renewable energy innovation.</p>
-      <a class="read" href="#">Read More →</a>
-    </div>
-  </div>
-
-</div>
-
-</div>
-</section>
-
-<!-- NEWSLETTER -->
-<section class="container">
-<div class="newsletter">
-  <h2>Stay Updated</h2>
-  <p>Get engineering insights and new articles directly in your inbox.</p>
-
-  <input type="email" placeholder="Enter your email">
-  <button>Subscribe</button>
-</div>
 </section>
 
 <!-- FOOTER -->
 <footer class="footer">
-<div class="container footer-grid">
+  <div class="container footer-grid">
 
-  <div class="footer-section">
-    <h3>Chisola Nyala</h3>
-    <p>Engineering insights, renewable energy, and professional growth content.</p>
-  </div>
-
-  <div class="footer-section">
-    <h4>Quick Links</h4>
-    <ul>
-      <li><a href="home.html">Home</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="learning.html">Learning</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </div>
-
-  <div class="footer-section">
-    <h4>Contact</h4>
-    <p>Email: inquiry@chisolanyala.com</p>
-    <p>Lusaka, Zambia</p>
-  </div>
-
-  <div class="footer-section">
-    <h4>Connect</h4>
-    <div class="social-icons">
-      <a href="#"><i class="fab fa-linkedin-in"></i></a>
-      <a href="#"><i class="fab fa-youtube"></i></a>
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-x-twitter"></i></a>
+    <div class="footer-section">
+      <h3>Chisola Nyala</h3>
+      <p>Electrical Engineer and Renewable Energy Specialist focused on sustainable engineering solutions.</p>
     </div>
+
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Contact</h4>
+      <p>Email: inquiry@chisolanyala.com</p>
+      <p>Phone: +260 977 441 348</p>
+      <p>Lusaka, Zambia</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Connect</h4>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+
   </div>
 
-</div>
-
-<div class="footer-bottom">
-  © 2026 Chisola Nyala • Blog
-</div>
+  <div class="footer-bottom">
+    <p>© 2026 Chisola Nyala. All Rights Reserved.</p>
+  </div>
 </footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById("navMenu").classList.toggle("show");
+}
+</script>
 
 </body>
 </html>
