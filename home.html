@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <title>Chisola Nyala — Home</title>
 
   
@@ -408,6 +410,26 @@ main{
   width:100%;
 }
 }
+    .social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.social-links a {
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #38bdf8;
+}
+
+.social-links i {
+  width: 20px;
+  margin-right: 8px;
+}
 </style>
 </head>
 <body>
@@ -452,27 +474,27 @@ main{
     <div class="container">
 
       <section class="card">
-        <h2>About Me</h2>
-        <div class="about-grid">
-          <div class="about-text"
-            <p>
-              I am an Electrical Engineer and Renewable Energy Specialist with experience in renewable energy systems,
-              technical consulting, project coordination, and sustainable engineering solutions.
-            </p>
-            <p>
-              My professional interests lie in advancing clean energy technologies, improving energy access, and
-              supporting projects that create practical and lasting impact for communities and businesses.
-            </p>
-            <p>
-              Through this platform, I share my professional work, academic achievements, and research contributions
-              focused on engineering and sustainability.
-            </p>
-          </div>
+       <h2>About Me</h2>
+<div class="about-grid">
+  <div class="about-text">
+    <p>
+      Chisola Nyala is an Electrical Engineer and Renewable Energy Specialist with experience in renewable energy systems,
+      technical consulting, project coordination, and sustainable engineering solutions.
+    </p>
+    <p>
+      His professional interests focus on advancing clean energy technologies, improving energy access, and
+      supporting projects that create practical and lasting impact for communities and businesses.
+    </p>
+    <p>
+      Through this platform, he shares his professional work, academic achievements, and research contributions
+      focused on engineering and sustainability.
+    </p>
+  </div>
 
-          <div class="about-image">
-            <img src="images/Untitled design.png" alt="Chisola Nyala portrait">
-          </div>
-        </div>
+  <div class="about-image">
+    <img src="images/Untitled design.png" alt="Chisola Nyala portrait">
+  </div>
+</div>
       </section>
 
 
@@ -574,10 +596,55 @@ main{
   </main>
 
   <footer class="footer">
-    <div class="container">
-      © 2026 Chisola Nyala 
+  <div class="container footer-grid">
+
+    <!-- Brand -->
+    <div class="footer-section">
+      <h3>Chisola Nyala</h3>
+      <p>
+        Electrical Engineer & Renewable Energy Specialist dedicated to
+        sustainable engineering solutions and clean energy innovation.
+      </p>
     </div>
-  </footer>
+
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="learning.html">Learning</a></li>
+        <li><a href="education.html">Research</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-section">
+      <h4>Contact</h4>
+      <p>Email: inquiry@chisolanyala.com</p>
+      <p>Phone: +260 977 441 348</p>
+      <p>Lusaka, Zambia</p>
+    </div>
+
+    <!-- Socials -->
+    <div class="social-links">
+    <a href="https://www.linkedin.com/in/chisola-nyala-309042158/" target="_blank">
+    <i class="fab fa-linkedin"></i> LinkedIn</a>
+    <a href="https://facebook.com/yourprofile" target="_blank">
+    <i class="fab fa-facebook"></i> Facebook
+  </a>
+
+  <a href="https://x.com/yourusername" target="_blank">
+    <i class="fab fa-x-twitter"></i> X
+  </a>
+</div>
+
+</div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Chisola Nyala. All Rights Reserved.</p>
+  </div>
+</footer>
 <script>
 function toggleMenu() {
   document.getElementById("mobileMenu")
